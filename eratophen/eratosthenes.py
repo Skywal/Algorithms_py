@@ -22,4 +22,3 @@ if __name__ == "__main__":
     print(f"For number {args['first']} all simple nums are \n{list_for_first}\n")
     print(f"For number {args['second']} all simple nums are \n{list_for_second}\n")
     print(f"For number {args['third']} all simple nums are \n{list_for_third}\n")
-

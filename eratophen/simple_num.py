@@ -26,7 +26,7 @@ def eratosthenes(top_num):
     Find the numbers of Eratosthenes up to a certain number and 
     return formed list with simple nums
     """
-    sqnc = [i for i in range(2, top_num)]
+    sqnc = [i for i in range(2, top_num+1)]
 
     for i in sqnc:
         prime_num_check(sqnc, i)
