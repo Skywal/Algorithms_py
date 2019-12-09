@@ -34,4 +34,3 @@ def eratosthenes(top_num):
     clean_up_list(sqnc)
 
     return sqnc
-
