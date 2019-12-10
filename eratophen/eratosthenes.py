@@ -1,5 +1,6 @@
 # My implementation of the sieve of eratosthenes
 from simple_num import *
+from lcd_lcm import *
 import argparse
 
 ap = argparse.ArgumentParser()
@@ -22,3 +23,9 @@ if __name__ == "__main__":
     print(f"For number {args['first']} all simple nums are \n{list_for_first}\n")
     print(f"For number {args['second']} all simple nums are \n{list_for_second}\n")
     print(f"For number {args['third']} all simple nums are \n{list_for_third}\n")
+
+    #print(f"{simple_multip(int(args['first']), list_for_first)}")
+    #print(f"{simple_multip(int(args['second']), list_for_second)}")
+    #print(f"{simple_multip(int(args['third']), list_for_third)}")
+
+    print(f"\n{least_common_multiple(int(args['first']), list_for_first, int(args['second']), list_for_second)}")
