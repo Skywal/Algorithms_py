@@ -14,22 +14,24 @@ def lea_com_mult(number1, simp_nums1, number2, simp_nums2):
     
     # take list for first num as start point
     result_list = list(multip_for_first)
+    # intersection between two lists
+    intersec = []
 
-    # check if number from the second list is in result_list
-    for i in multip_for_second:
-        
-        temp = []
-        last = 1
-        for j in result_list:
-            
-            if j != i and i != last:
-                temp.append(i)
-                last = i
-        
-        # add missing numbers into list
-        result_list.extend(temp)
+    # find the same numbers is both lists
+    if len(multip_for_first) <= len(multip_for_second):
+        intersec.extend(find_unic_intersec(multip_for_first, multip_for_second))
+    else:
+        intersec.extend(find_unic_intersec(multip_for_second, multip_for_first))
 
-    print(result_list)
+    # delete all non-unique numbers from second list
+    for i in intersec:
+        for j in multip_for_second:
+            if i == j:
+                multip_for_second.remove(i)
+                break
+    
+    result_list.extend(multip_for_second)
+
     return mult_list(result_list)
 
 
@@ -74,20 +76,31 @@ def simple_multip(num, simple_nums=[]):
             # take the next simple number in case of divide failure
             i = i + 1
     
+    # append last number
     result.append(1)
 
     return result
 
 
 def find_unic_intersec(lesser_list = [], larger_list = []):
-
+    """
+    Seek unik intersection in two lists os simple multipliers
+    like 
+    [2, 2, 2, 2, 1] and [2, 2, 5, 1] <- smaller one is main in comparison of this two
+     |  |                |  |
+    the result is [2, 2]
+    """
     temp_list = []
 
+    # easier to check smaller in larger than vice versa
+    # if we have true comparison we don't check that number again
     for i in range(len(lesser_list)):
-
+        
+        # start next iteration from previous possition, don't have to check checked
         j = i
         while j < len(larger_list):
 
+            # no reason to continue if we have true
             if lesser_list[i] == larger_list[j]:
                 temp_list.append(larger_list[j])
                 break
