@@ -27,5 +27,6 @@ if __name__ == "__main__":
     #print(f"{simple_multip(int(args['first']), list_for_first)}")
     #print(f"{simple_multip(int(args['second']), list_for_second)}")
     #print(f"{simple_multip(int(args['third']), list_for_third)}")
-
-    print(f"\n{least_common_multiple(int(args['first']), list_for_first, int(args['second']), list_for_second)}")
+    print(f"For numbers {args['first']} and {args['second']}")
+    print(f"the largest common divisor is {larg_com_div(int(args['first']), list_for_first, int(args['second']), list_for_second)}")
+    print(f"the least common multiple is {lea_com_mult(int(args['first']), list_for_first, int(args['second']), list_for_second)}")
