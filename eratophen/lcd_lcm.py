@@ -18,7 +18,7 @@ def lea_com_mult(number1, simp_nums1, number2, simp_nums2):
     intersec = []
 
     # find the same numbers is both lists
-    if len(multip_for_first) <= len(multip_for_second):
+    if len(multip_for_first) < len(multip_for_second): # may be a bug with <= and similar lists as for nums 169 and 143
         intersec.extend(find_unic_intersec(multip_for_first, multip_for_second))
     else:
         intersec.extend(find_unic_intersec(multip_for_second, multip_for_first))
@@ -43,13 +43,18 @@ def larg_com_div(number1, simp_nums1, number2, simp_nums2):
     # find simple multipliers
     multip_for_first = simple_multip(number1, simp_nums1)
     multip_for_second = simple_multip(number2, simp_nums2)
+    
+    print(multip_for_first)
+    print(multip_for_second)
 
     result = []
     
-    if len(multip_for_first) <= len(multip_for_second):
+    if len(multip_for_first) < len(multip_for_second): # may be a bug with <= and similar lists as for nums 169 and 143
         result.extend(find_unic_intersec(multip_for_first, multip_for_second))
     else:
         result.extend(find_unic_intersec(multip_for_second, multip_for_first))
+    
+    print(result)
 
     return mult_list(result)
 
